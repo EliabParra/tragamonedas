@@ -12,11 +12,7 @@ body {
     font-size: 1.6rem;
     min-height: 100%;
 }
-.contenedor {
-    width: 95%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+
 .contenedor-sm {
     max-width: 70rem;
     margin: 0 auto;
@@ -30,4 +26,37 @@ img {
 
 .app {
     text-align: center;
+}
+
+.app{
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    background-color: darkorange;
+}
+
+.maquina{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem, 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+.boton span{
+    color: red;
 }
