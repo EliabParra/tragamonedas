@@ -55,7 +55,9 @@ h2 {
 .maquina tbody td {
     width: 33.33%;
     text-align: center;
-    height: 8rem
+    height: 8rem;
+    color: black;
+    padding: 1rem;
 }
 
 .boton {
@@ -75,4 +77,9 @@ h2 {
 }
 .boton:hover {
     background-color: rgb(79, 76, 76);
+}
+
+.banana {
+    background-image: url('img/banana.svg');
+    background-size: cover;
 }
