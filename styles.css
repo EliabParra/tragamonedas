@@ -12,7 +12,6 @@ body {
     font-size: 1.6rem;
     min-height: 100%;
 }
-
 .contenedor-sm {
     max-width: 70rem;
     margin: 0 auto;
@@ -23,40 +22,57 @@ a {
 img {
     max-width: 100%;
 }
+h2 {
+    margin: 0 0 3rem;
+}
 
-.app {
+.maquina, .app {
     text-align: center;
-}
-
-.app{
-    display: flex;
-    align-items: center;
-    border-radius: 2rem;
-    background-color: darkorange;
-}
-
-.maquina{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.boton{
-    background-color: var(--secundario);
-    color: var(--blanco);
-    padding: 1rem, 3rem;
-    margin-top: 3rem;
-    font-size: 2rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: .5rem;
-    width: 90%;
-    text-align: center;
-    border: none;
+.maquina {
+    margin-top: 5rem;
+    width: 50%;
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(255, 255, 255, 0.2);
+    background-color: darkorange;
 }
 
+.maquina table {
+    width: 100%;
+    padding: 1rem;
+}
+.maquina tbody {
+    border: 1px solid gray;
+    background-color: #fff;
+}
+.maquina tbody td {
+    width: 33.33%;
+    text-align: center;
+    height: 8rem
+}
+
+.boton {
+    color: var(--blanco);
+    margin-top: 3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    text-align: center;
+    border: none;
+    padding: 1rem 2rem;
+    transition: all .3s;
+    cursor: pointer;
+}
 .boton span{
-    color: red;
+    color: darkorange;
+}
+.boton:hover {
+    background-color: rgb(79, 76, 76);
 }
