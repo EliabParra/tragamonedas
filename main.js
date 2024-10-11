@@ -55,15 +55,14 @@ const premios = [
     }
 ];
 
-let cantidad = 0;
-let saldo = 20;
+let saldo = 200;
 saldoSpan.innerText = `${saldo}`;
 
 boton.addEventListener('click', () => {
     casillas.forEach(casilla => {
         casilla.innerHTML = '';
     });
-    saldo--;
+    saldo -= 5;
     
     if (saldo < 0) {
         saldo = 0;
@@ -75,36 +74,112 @@ boton.addEventListener('click', () => {
         return;
     }
     
-    saldoSpan.innerText = `${saldo}`;
-    
-    // premios.forEach(premio => {
-    //     const img = new Image();
-    //     img.src = `img/${premio.imagen}`;
-    //     img.alt = premio.nombre;
-    //     img.id = premio.id;
-    //     img.classList.add('img-fluid');
-    // });
-
     const img1 = new Image();
     const img2 = new Image();
     const img3 = new Image();
-    img1.src = `img/${premios[getRandomInt(9)].imagen}`;
-    img2.src = `img/${premios[getRandomInt(9)].imagen}`;
-    img3.src = `img/${premios[getRandomInt(9)].imagen}`;
 
-    img1.id = premios[getRandomInt(9)].id;
-    img2.id = premios[getRandomInt(9)].id;
-    img3.id = premios[getRandomInt(9)].id;
+    establecerImagen(img1, c1);
+    establecerImagen(img2, c2);
+    establecerImagen(img3, c3);
+    
+    if (img1.id === img2.id && img1.id === img3.id) {
+        switch (parseInt(img1.id)) {
+            case 1:
+                saldo += 10;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado 10$",
+                });
+                break;
+            
+            case 2:
+                saldo += 500;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado 500$",
+                });
+                break;
+            
+            case 3:
+                saldo += 250;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado 250$",
+                });
+                break;
+            
+            case 4:
+                saldo += 125;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado 125$",
+                });
+                break;
+            
+            case 5:
+                saldo += 100;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado 100$",
+                });
+                break;
+            
+            case 6:
+                saldo += 50;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado 50$",
+                });
+                break;
+            
+            case 7:
+                saldo += 25;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado 25$",
+                });
+                break;
+            
+            case 8:
+                saldo += 1000;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado premio grande 1000$",
+                });
+                break;
 
-    img1.classList.add('img-fluid');
-    img2.classList.add('img-fluid');
-    img3.classList.add('img-fluid');
+            case 9:
+                saldo += 20;
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Ganaste!",
+                    text: "Has ganado 20$",
+                });
+                break;
+        
+            default:
+                break;
+        }
 
-    c1.appendChild(img1);
-    c2.appendChild(img2);
-    c3.appendChild(img3);
+    }
+    saldoSpan.innerText = `${saldo}`
 });
 
+function establecerImagen(img, casilla) {
+    img.src = `img/${premios[getRandomInt(premios.length)].imagen}`;
+    const id = premios.find(premio => img.src.includes(premio.imagen));
+    img.id = id.id;
+    img.classList.add('img-fluid');
+    casilla.appendChild(img);
+}
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
